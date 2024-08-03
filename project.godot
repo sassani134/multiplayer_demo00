@@ -14,6 +14,10 @@ config/name="multiplayer_demo00"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+LobbyRoom="*res://Scripts/lobby_room.gd"
+
 [rendering]
 
 renderer/rendering_method="mobile"
