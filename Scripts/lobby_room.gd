@@ -39,12 +39,12 @@ func _on_button_host_pressed() ->void:
 	multiplayer.multiplayer_peer = peer
 	multiplayer.peer_connected.connect(add_player)
 	add_player()
-	# change scene
+	#get_tree().change_scene("res://Game.tscn")
 	return
 
 
 func _on_button_join_pressed() ->void:
 	peer.create_client("127.0.0.1", 1027)
 	multiplayer.multiplayer_peer = peer
-	# change scene
+	#get_tree().change_scene("res://Game.tscn")
 	return
