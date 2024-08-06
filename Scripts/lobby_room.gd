@@ -13,6 +13,7 @@ func _del_player(id : int) -> void:
 	get_node(str(id)).queue_free()
 
 func add_player(id : int = 1) -> void:
+	## instantiate in the next scene
 	var player := player_scene.instantiate()
 	player.name = str(id)
 	call_deferred("add_child", player)
@@ -47,4 +48,5 @@ func _on_button_join_pressed() ->void:
 	peer.create_client("127.0.0.1", 1027)
 	multiplayer.multiplayer_peer = peer
 	#get_tree().change_scene("res://Game.tscn")
+	## je ne dois pas ajouter un player aussi ?
 	return
