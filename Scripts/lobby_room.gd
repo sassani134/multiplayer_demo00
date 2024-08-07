@@ -1,4 +1,12 @@
 extends Control
+## These signals can be connected to by a UI lobby scene or the game scene.
+#signal player_connected(peer_id, player_info)
+#signal player_disconnected(peer_id)
+#signal server_disconnected
+
+const PORT = 7000
+const LOCALHOST = "127.0.0.1" # IPv4 localhost
+const MAX_CONNECTIONS = 20
 
 @onready var text_edit = $VBoxContainer/TextEdit
 var peer := ENetMultiplayerPeer.new()
@@ -27,8 +35,12 @@ func exit_game(id : int) -> void :
 
 # Called when the node enters the scene tree for the first time.
 func _ready()-> void:
-	pass # Replace with function body.
-
+	#multiplayer.peer_connected.connect(_on_player_connected)
+	#multiplayer.peer_disconnected.connect(_on_player_disconnected)
+	#multiplayer.connected_to_server.connect(_on_connected_ok)
+	#multiplayer.connection_failed.connect(_on_connected_fail)
+	#multiplayer.server_disconnected.connect(_on_server_disconnected)
+	return
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta : float) -> void:
