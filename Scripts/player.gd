@@ -2,6 +2,12 @@ extends CharacterBody2D
 
 @onready var cam = $Camera2D
 
+#https://forum.godotengine.org/t/multiplayersynchronizer-on-a-characterbody2d/2870/2
+@export var my_velocity := Vector2(0., 0.):
+	set(velo):
+		velocity = velo  # to set mine
+		my_velocity = velo  # to set theirs
+
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
