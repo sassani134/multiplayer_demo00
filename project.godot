@@ -16,7 +16,11 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-LobbyRoom="*res://Scripts/lobby_room.gd"
+Lobby2="*res://Scripts/lobby2.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/wakatime/plugin.cfg")
 
 [rendering]
 
